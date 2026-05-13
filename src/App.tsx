@@ -19,6 +19,7 @@ import {
   Plant,
   Coins
 } from '@phosphor-icons/react'
+import { Logo } from '@/components/Logo'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -204,10 +205,12 @@ function Navigation({ isScrolled }: { isScrolled: boolean }) {
     >
       <a
         href="#hero"
-        className="text-2xl tracking-[0.2em] font-light relative group"
-        style={{ fontFamily: 'Cormorant Garamond, serif' }}
+        className="relative group flex items-center gap-3"
       >
-        VLR
+        <Logo variant="icon" className="w-12 h-12 transition-transform duration-300 group-hover:scale-110" />
+        <span className="text-xl tracking-[0.2em] font-light hidden md:inline" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          VLR
+        </span>
         <span className="absolute bottom-0 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-600 origin-left" />
       </a>
 
