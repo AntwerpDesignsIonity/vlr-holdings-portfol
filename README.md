@@ -14,4 +14,4 @@ Static Vite/React site for the VLR Holdings portfolio, configured for GitHub Pag
 
 ## GitHub Pages
 
-The Pages workflow in `/home/runner/work/vlr-holdings-portfol/vlr-holdings-portfol/.github/workflows/static.yml` builds the site and publishes the generated `dist/` output.
+The Pages workflow in `.github/workflows/static.yml` builds the site and publishes the generated `dist/` output.
