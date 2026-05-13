@@ -11,7 +11,13 @@ import {
   Lightbulb,
   TrendUp,
   Globe,
-  Scroll
+  Scroll,
+  Buildings,
+  Cpu,
+  Leaf,
+  Handshake,
+  Plant,
+  Coins
 } from '@phosphor-icons/react'
 
 function App() {
@@ -28,7 +34,7 @@ function App() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100)
       
-      const sections = ['hero', 'philosophy', 'growth', 'services', 'contact']
+      const sections = ['hero', 'philosophy', 'growth', 'services', 'investments', 'contact']
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -47,6 +53,7 @@ function App() {
   return (
     <>
       <div className="grain-overlay" />
+      <GoldDust />
       <CustomCursor />
       <Preloader isLoading={isLoading} />
       <Navigation isScrolled={isScrolled} />
@@ -55,6 +62,7 @@ function App() {
       <PhilosophySection />
       <GrowthSection />
       <ServicesSection />
+      <InvestmentOpportunitiesSection />
       <ParallaxDivider />
       <ContactSection />
       <Footer />
@@ -208,6 +216,7 @@ function Navigation({ isScrolled }: { isScrolled: boolean }) {
           { label: 'Philosophy', href: '#philosophy' },
           { label: 'Growth', href: '#growth' },
           { label: 'Services', href: '#services' },
+          { label: 'Investments', href: '#investments' },
           { label: 'Contact', href: '#contact' }
         ].map((link) => (
           <li key={link.href}>
@@ -233,6 +242,7 @@ function PullOutTabs({ activeSection }: { activeSection: string }) {
     { id: 'philosophy', label: 'Philosophy', icon: <Lightbulb size={20} weight="thin" />, href: '#philosophy' },
     { id: 'growth', label: 'Growth', icon: <Tree size={20} weight="thin" />, href: '#growth' },
     { id: 'services', label: 'Services', icon: <Target size={20} weight="thin" />, href: '#services' },
+    { id: 'investments', label: 'Investments', icon: <ChartLine size={20} weight="thin" />, href: '#investments' },
     { id: 'contact', label: 'Contact', icon: <Users size={20} weight="thin" />, href: '#contact' }
   ]
 
@@ -246,14 +256,14 @@ function PullOutTabs({ activeSection }: { activeSection: string }) {
             onMouseEnter={() => setHoveredTab(tab.id)}
             onMouseLeave={() => setHoveredTab(null)}
             className={`flex items-center overflow-hidden ${
-              activeSection === tab.id ? 'text-primary' : 'text-muted-foreground'
+              activeSection === tab.id ? 'text-accent' : 'text-foreground'
             }`}
             initial={{ x: -100 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.6, delay: 3 + tabs.indexOf(tab) * 0.1 }}
           >
             <motion.div
-              className="flex items-center gap-4 bg-card border border-border px-4 py-3 relative"
+              className="flex items-center gap-4 bg-card/90 backdrop-blur-sm border border-primary/30 px-4 py-3 relative shadow-lg"
               animate={{
                 width: hoveredTab === tab.id ? 'auto' : '48px'
               }}
@@ -262,13 +272,13 @@ function PullOutTabs({ activeSection }: { activeSection: string }) {
               {activeSection === tab.id && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute left-0 top-0 bottom-0 w-1 bg-primary"
+                  className="absolute left-0 top-0 bottom-0 w-1 bg-accent shadow-[0_0_10px_rgba(212,175,55,0.5)]"
                   transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
                 />
               )}
-              <div className="shrink-0">{tab.icon}</div>
+              <div className="shrink-0 text-primary">{tab.icon}</div>
               <motion.span
-                className="text-xs tracking-[0.2em] uppercase whitespace-nowrap"
+                className="text-xs tracking-[0.2em] uppercase whitespace-nowrap text-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: hoveredTab === tab.id ? 1 : 0 }}
                 transition={{ duration: 0.2 }}
@@ -803,6 +813,191 @@ function ParallaxDivider() {
   )
 }
 
+function GoldDust() {
+  interface Particle {
+    id: number
+    x: number
+    delay: number
+    duration: number
+    scale: number
+  }
+
+  const [particles] = useState<Particle[]>(() =>
+    Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      delay: Math.random() * 20,
+      duration: 20 + Math.random() * 15,
+      scale: 0.3 + Math.random() * 1
+    }))
+  )
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[9998] overflow-hidden">
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute w-1 h-1 rounded-full"
+          style={{
+            left: `${particle.x}%`,
+            top: '110%',
+            background: 'radial-gradient(circle, oklch(0.75 0.12 85) 0%, oklch(0.88 0.08 90) 50%, transparent 70%)',
+            boxShadow: '0 0 8px oklch(0.75 0.12 85 / 0.6), 0 0 15px oklch(0.75 0.12 85 / 0.3)'
+          }}
+          animate={{
+            y: [0, -window.innerHeight - 200],
+            x: [0, (Math.random() - 0.5) * 100],
+            opacity: [0, 0.8, 0.8, 0],
+            scale: [0, particle.scale, particle.scale * 1.5, 0],
+            rotate: [0, 360]
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            delay: particle.delay,
+            ease: "linear"
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
+function InvestmentOpportunitiesSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  const investments = [
+    {
+      title: 'Technology Innovation',
+      icon: <Cpu size={40} weight="thin" />,
+      description: 'Investing in cutting-edge technologies that shape the future of industries and create sustainable competitive advantages.'
+    },
+    {
+      title: 'Assets of Value',
+      icon: <Coins size={40} weight="thin" />,
+      description: 'Strategic acquisition of high-value assets with proven track records and strong fundamentals for long-term appreciation.'
+    },
+    {
+      title: 'Real Estate',
+      icon: <Buildings size={40} weight="thin" />,
+      description: 'Premium property investments in strategic locations, focusing on sustainable development and value creation.'
+    },
+    {
+      title: 'Agriculture',
+      icon: <Plant size={40} weight="thin" />,
+      description: 'Modern agricultural ventures that combine traditional wisdom with innovative practices for sustainable food production.'
+    },
+    {
+      title: 'Green Tomorrow',
+      icon: <Leaf size={40} weight="thin" />,
+      description: 'Environmental sustainability initiatives and renewable energy projects that build a better future for generations.'
+    },
+    {
+      title: 'Business Growth Sustainability Program',
+      icon: <TrendUp size={40} weight="thin" />,
+      description: 'Comprehensive programs designed to accelerate business growth while maintaining environmental and social responsibility.'
+    },
+    {
+      title: 'Business Opportunities',
+      icon: <Handshake size={40} weight="thin" />,
+      description: 'Strategic partnerships and joint ventures that unlock new markets and create mutual value for all stakeholders.'
+    }
+  ]
+
+  return (
+    <section ref={ref} id="investments" className="py-40 px-4 bg-gradient-to-b from-background via-card/20 to-background">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-8 text-[11px] tracking-[0.4em] uppercase text-primary mb-8"
+          >
+            <span className="w-8 h-px bg-primary" />
+            Investment Opportunities
+            <span className="w-8 h-px bg-primary" />
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl md:text-5xl mb-6"
+          >
+            Diverse Portfolio, <span className="shimmer-text">Unified Vision</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg text-muted-foreground max-w-3xl mx-auto"
+          >
+            Our investment philosophy spans multiple sectors, united by a commitment to sustainable growth and long-term value creation.
+          </motion.p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {investments.map((investment, index) => (
+            <InvestmentCard key={investment.title} investment={investment} index={index} isInView={isInView} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function InvestmentCard({ investment, index, isInView }: { investment: any; index: number; isInView: boolean }) {
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: 0.1 + (index % 3) * 0.1 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <Card className="p-8 h-full bg-card border-border/50 hover:border-primary/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden group">
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        />
+
+        <div className="relative">
+          <motion.div
+            className="text-primary mb-6"
+            animate={{ scale: isHovered ? 1.1 : 1, rotate: isHovered ? 5 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {investment.icon}
+          </motion.div>
+          
+          <h3 className="text-xl mb-4 font-light" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+            {investment.title}
+          </h3>
+          
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {investment.description}
+          </p>
+        </div>
+
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+          style={{ transformOrigin: 'left' }}
+        />
+      </Card>
+    </motion.div>
+  )
+}
+
 function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
@@ -843,9 +1038,20 @@ function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="text-muted-foreground mb-8"
+        >
+          <a href="mailto:info@vlr-holdings.co.za" className="text-primary hover:text-accent transition-colors duration-300 text-lg">
+            info@vlr-holdings.co.za
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <MagneticButton href="mailto:contact@vlrholdings.com">
+          <MagneticButton href="mailto:info@vlr-holdings.co.za">
             Initiate Dialogue
           </MagneticButton>
         </motion.div>
@@ -908,7 +1114,7 @@ function Footer() {
           Kasvukapital — Growth Capital
         </div>
         
-        <div className="flex justify-center gap-8 mb-8">
+        <div className="flex justify-center gap-8 mb-8 flex-wrap">
           {['Privacy', 'Terms', 'LinkedIn', 'Twitter'].map((link) => (
             <a
               key={link}
@@ -922,8 +1128,11 @@ function Footer() {
 
         <Separator className="mb-8 bg-border/30" />
 
+        <div className="text-[11px] text-muted-foreground/70 tracking-[0.1em] mb-4">
+          Created by Ionity Global (Pty) Ltd | Antwerp Designs
+        </div>
         <div className="text-[11px] text-muted-foreground/50 tracking-[0.1em]">
-          © 2026 VLR Holdings. All rights reserved.
+          © 2018-2026 VLR Holdings. ALL RIGHTS RESERVED
         </div>
       </div>
     </footer>
