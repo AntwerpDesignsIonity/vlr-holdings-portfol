@@ -159,18 +159,10 @@ function Preloader({ isLoading }: { isLoading: boolean }) {
                 animate={{ pathLength: 1, opacity: 0.5 }}
                 transition={{ duration: 2, delay: 0.3, ease: "easeInOut" }}
               />
-              <text
-                x="50"
-                y="55"
-                textAnchor="middle"
-                fill="oklch(0.75 0.12 85)"
-                fontSize="24"
-                fontWeight="300"
-                fontFamily="Cormorant Garamond, serif"
-              >
-                VLR
-              </text>
             </svg>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Logo variant="icon" className="w-16 h-16" />
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1110,8 +1102,8 @@ function Footer() {
   return (
     <footer className="py-16 px-4 border-t border-border/50 text-center">
       <div className="max-w-7xl mx-auto">
-        <div className="text-3xl tracking-[0.2em] mb-4 text-primary" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-          VLR
+        <div className="flex justify-center mb-4">
+          <Logo variant="icon" className="w-16 h-16" />
         </div>
         <div className="text-xs tracking-[0.3em] text-muted-foreground mb-8">
           Kasvukapital — Growth Capital
