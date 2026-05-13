@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -69,6 +70,19 @@ function App() {
       <Footer />
     </>
   )
+}
+
+type Service = {
+  number: string
+  icon: ReactNode
+  title: string
+  description: string
+}
+
+type Investment = {
+  title: string
+  icon: ReactNode
+  description: string
 }
 
 function CustomCursor() {
@@ -692,7 +706,7 @@ function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const services = [
+  const services: Service[] = [
     {
       number: '01',
       icon: <ChartLine size={50} weight="thin" />,
@@ -748,7 +762,7 @@ function ServicesSection() {
   )
 }
 
-function ServiceCard({ service, index, isInView }: { service: any; index: number; isInView: boolean }) {
+function ServiceCard({ service, index, isInView }: { service: Service; index: number; isInView: boolean }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -862,7 +876,7 @@ function InvestmentOpportunitiesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const investments = [
+  const investments: Investment[] = [
     {
       title: 'Technology Innovation',
       icon: <Cpu size={40} weight="thin" />,
@@ -944,7 +958,7 @@ function InvestmentOpportunitiesSection() {
   )
 }
 
-function InvestmentCard({ investment, index, isInView }: { investment: any; index: number; isInView: boolean }) {
+function InvestmentCard({ investment, index, isInView }: { investment: Investment; index: number; isInView: boolean }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
