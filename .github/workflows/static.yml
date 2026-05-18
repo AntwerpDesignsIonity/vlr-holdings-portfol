@@ -1,5 +1,5 @@
-# Deploy static index.html + public assets directly — no build step needed
-name: Deploy static content to Pages
+# Build static site and deploy to GitHub Pages
+name: Deploy to Pages
 
 on:
   push:
@@ -24,12 +24,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Build site
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
