@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node -e \"const fs=require('fs');fs.mkdirSync('dist',{recursive:true});fs.copyFileSync('index.html','dist/index.html');fs.readdirSync('public').forEach(f=>fs.copyFileSync('public/'+f,'dist/'+f));console.log('Built to dist/')\"",
+    "build": "node -e \"const fs=require('fs'),path=require('path');fs.mkdirSync('dist',{recursive:true});fs.copyFileSync('index.html','dist/index.html');function copyDir(src,dest){fs.mkdirSync(dest,{recursive:true});fs.readdirSync(src).forEach(f=>{const s=path.join(src,f),d=path.join(dest,f);fs.statSync(s).isDirectory()?copyDir(s,d):fs.copyFileSync(s,d)});}copyDir('public','dist');console.log('Built to dist/')\"",
     "preview": "npx serve dist"
   }
 }
