@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="gold2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B6914"/>
+      <stop offset="35%" stop-color="#B08B3F"/>
+      <stop offset="65%" stop-color="#D4AF5A"/>
+      <stop offset="100%" stop-color="#F0D080"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Trunks (cropped to just the upper portion) ── -->
+  <path d="M160 220 C155 200 148 175 138 150 C128 125 115 102 100 88" stroke="url(#gold2)" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M240 220 C245 200 252 175 262 150 C272 125 285 102 300 88" stroke="url(#gold2)" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M200 240 C200 220 200 195 200 170 C200 145 200 118 200 100" stroke="url(#gold2)" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <path d="M160 220 C175 222 190 230 200 240 C210 230 225 222 240 220" stroke="url(#gold2)" stroke-width="9" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Left branches ── -->
+  <path d="M138 150 C122 138 105 130 90 125" stroke="url(#gold2)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M120 115 C108 103 95 95 80 90" stroke="url(#gold2)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M100 88 C88 75 75 65 60 58" stroke="url(#gold2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M100 88 C94 72 88 58 82 45" stroke="url(#gold2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M138 150 C130 135 122 120 118 105" stroke="url(#gold2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Right branches ── -->
+  <path d="M262 150 C278 138 295 130 310 125" stroke="url(#gold2)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M280 115 C292 103 305 95 320 90" stroke="url(#gold2)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M300 88 C312 75 325 65 340 58" stroke="url(#gold2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M300 88 C306 72 312 58 318 45" stroke="url(#gold2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M262 150 C270 135 278 120 282 105" stroke="url(#gold2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Centre upper branches ── -->
+  <path d="M200 100 C188 87 175 77 162 70" stroke="url(#gold2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M200 100 C212 87 225 77 238 70" stroke="url(#gold2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M200 100 C200 83 200 67 200 52" stroke="url(#gold2)" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Leaves — left cluster ── -->
+  <ellipse cx="60" cy="58" rx="16" ry="8" fill="url(#gold2)" transform="rotate(-30 60 58)"/>
+  <ellipse cx="80" cy="90" rx="14" ry="7" fill="url(#gold2)" transform="rotate(-20 80 90)"/>
+  <ellipse cx="90" cy="125" rx="13" ry="7" fill="url(#gold2)" transform="rotate(-15 90 125)"/>
+  <ellipse cx="82" cy="45" rx="12" ry="6" fill="url(#gold2)" transform="rotate(-45 82 45)"/>
+  <ellipse cx="118" cy="105" rx="12" ry="6" fill="url(#gold2)" transform="rotate(-25 118 105)"/>
+  <ellipse cx="45" cy="50" rx="11" ry="5" fill="url(#gold2)" transform="rotate(-55 45 50)"/>
+  <ellipse cx="70" cy="46" rx="10" ry="5" fill="url(#gold2)" transform="rotate(-35 70 46)"/>
+  <ellipse cx="92" cy="76" rx="11" ry="5" fill="url(#gold2)" transform="rotate(-10 92 76)"/>
+  <ellipse cx="56" cy="70" rx="10" ry="5" fill="url(#gold2)" transform="rotate(-40 56 70)"/>
+
+  <!-- ── Leaves — right cluster ── -->
+  <ellipse cx="340" cy="58" rx="16" ry="8" fill="url(#gold2)" transform="rotate(30 340 58)"/>
+  <ellipse cx="320" cy="90" rx="14" ry="7" fill="url(#gold2)" transform="rotate(20 320 90)"/>
+  <ellipse cx="310" cy="125" rx="13" ry="7" fill="url(#gold2)" transform="rotate(15 310 125)"/>
+  <ellipse cx="318" cy="45" rx="12" ry="6" fill="url(#gold2)" transform="rotate(45 318 45)"/>
+  <ellipse cx="282" cy="105" rx="12" ry="6" fill="url(#gold2)" transform="rotate(25 282 105)"/>
+  <ellipse cx="355" cy="50" rx="11" ry="5" fill="url(#gold2)" transform="rotate(55 355 50)"/>
+  <ellipse cx="330" cy="46" rx="10" ry="5" fill="url(#gold2)" transform="rotate(35 330 46)"/>
+  <ellipse cx="308" cy="76" rx="11" ry="5" fill="url(#gold2)" transform="rotate(10 308 76)"/>
+  <ellipse cx="344" cy="70" rx="10" ry="5" fill="url(#gold2)" transform="rotate(40 344 70)"/>
+
+  <!-- ── Leaves — centre top ── -->
+  <ellipse cx="162" cy="70" rx="12" ry="6" fill="url(#gold2)" transform="rotate(-20 162 70)"/>
+  <ellipse cx="238" cy="70" rx="12" ry="6" fill="url(#gold2)" transform="rotate(20 238 70)"/>
+  <ellipse cx="200" cy="52" rx="12" ry="6" fill="url(#gold2)"/>
+  <ellipse cx="183" cy="42" rx="10" ry="5" fill="url(#gold2)" transform="rotate(-15 183 42)"/>
+  <ellipse cx="217" cy="42" rx="10" ry="5" fill="url(#gold2)" transform="rotate(15 217 42)"/>
+  <ellipse cx="200" cy="30" rx="9" ry="4" fill="url(#gold2)"/>
+</svg>
