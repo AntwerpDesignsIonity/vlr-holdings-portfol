@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B6914"/>
+      <stop offset="35%" stop-color="#B08B3F"/>
+      <stop offset="65%" stop-color="#D4AF5A"/>
+      <stop offset="100%" stop-color="#F0D080"/>
+    </linearGradient>
+    <linearGradient id="goldV" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8A040"/>
+      <stop offset="50%" stop-color="#B08B3F"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Tree trunk / V letterform ── -->
+  <!-- Left trunk (V left leg) -->
+  <path d="M160 280 C155 260 148 235 138 210 C128 185 115 162 100 148" stroke="url(#gold)" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <!-- Right trunk (V right leg into L/R) -->
+  <path d="M240 280 C245 260 252 235 262 210 C272 185 285 162 300 148" stroke="url(#gold)" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <!-- Centre stem going up -->
+  <path d="M200 300 C200 280 200 255 200 230 C200 205 200 185 200 165" stroke="url(#gold)" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <!-- Base of V merging point -->
+  <path d="M160 280 C175 282 190 290 200 300 C210 290 225 282 240 280" stroke="url(#gold)" stroke-width="10" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Left branch system ── -->
+  <path d="M138 210 C122 198 105 190 90 185" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M120 175 C108 163 95 155 80 150" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M100 148 C88 135 75 125 60 118" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M100 148 C94 132 88 118 82 105" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M138 210 C130 195 122 180 118 165" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Right branch system ── -->
+  <path d="M262 210 C278 198 295 190 310 185" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M280 175 C292 163 305 155 320 150" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M300 148 C312 135 325 125 340 118" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M300 148 C306 132 312 118 318 105" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M262 210 C270 195 278 180 282 165" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Centre upper branches ── -->
+  <path d="M200 165 C188 152 175 142 162 135" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M200 165 C212 152 225 142 238 135" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M200 165 C200 148 200 132 200 118" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- ── Leaves — left cluster ── -->
+  <ellipse cx="60" cy="118" rx="14" ry="7" fill="url(#gold)" transform="rotate(-30 60 118)"/>
+  <ellipse cx="80" cy="150" rx="12" ry="6" fill="url(#gold)" transform="rotate(-20 80 150)"/>
+  <ellipse cx="90" cy="185" rx="12" ry="6" fill="url(#gold)" transform="rotate(-15 90 185)"/>
+  <ellipse cx="82" cy="105" rx="10" ry="5" fill="url(#gold)" transform="rotate(-45 82 105)"/>
+  <ellipse cx="118" cy="165" rx="11" ry="5" fill="url(#gold)" transform="rotate(-25 118 165)"/>
+  <ellipse cx="48" cy="112" rx="10" ry="5" fill="url(#gold)" transform="rotate(-50 48 112)"/>
+  <ellipse cx="72" cy="108" rx="9" ry="4" fill="url(#gold)" transform="rotate(-35 72 108)"/>
+  <ellipse cx="95" cy="138" rx="10" ry="5" fill="url(#gold)" transform="rotate(-10 95 138)"/>
+
+  <!-- ── Leaves — right cluster ── -->
+  <ellipse cx="340" cy="118" rx="14" ry="7" fill="url(#gold)" transform="rotate(30 340 118)"/>
+  <ellipse cx="320" cy="150" rx="12" ry="6" fill="url(#gold)" transform="rotate(20 320 150)"/>
+  <ellipse cx="310" cy="185" rx="12" ry="6" fill="url(#gold)" transform="rotate(15 310 185)"/>
+  <ellipse cx="318" cy="105" rx="10" ry="5" fill="url(#gold)" transform="rotate(45 318 105)"/>
+  <ellipse cx="282" cy="165" rx="11" ry="5" fill="url(#gold)" transform="rotate(25 282 165)"/>
+  <ellipse cx="352" cy="112" rx="10" ry="5" fill="url(#gold)" transform="rotate(50 352 112)"/>
+  <ellipse cx="328" cy="108" rx="9" ry="4" fill="url(#gold)" transform="rotate(35 328 108)"/>
+  <ellipse cx="305" cy="138" rx="10" ry="5" fill="url(#gold)" transform="rotate(10 305 138)"/>
+
+  <!-- ── Leaves — centre top ── -->
+  <ellipse cx="162" cy="135" rx="11" ry="5" fill="url(#gold)" transform="rotate(-20 162 135)"/>
+  <ellipse cx="238" cy="135" rx="11" ry="5" fill="url(#gold)" transform="rotate(20 238 135)"/>
+  <ellipse cx="200" cy="118" rx="11" ry="5" fill="url(#gold)" transform="rotate(0 200 118)"/>
+  <ellipse cx="185" cy="108" rx="9" ry="4" fill="url(#gold)" transform="rotate(-15 185 108)"/>
+  <ellipse cx="215" cy="108" rx="9" ry="4" fill="url(#gold)" transform="rotate(15 215 108)"/>
+
+  <!-- ── VLR text ── -->
+  <text x="200" y="358" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="400" fill="url(#goldV)" letter-spacing="14">VLR</text>
+
+  <!-- ── HOLDINGS text ── -->
+  <text x="200" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="url(#goldV)" letter-spacing="10">HOLDINGS</text>
+
+  <!-- ── kasvukapital tagline ── -->
+  <line x1="80" y1="428" x2="148" y2="428" stroke="url(#gold)" stroke-width="1"/>
+  <text x="200" y="432" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="url(#gold)" letter-spacing="3">kasvukapital</text>
+  <line x1="252" y1="428" x2="320" y2="428" stroke="url(#gold)" stroke-width="1"/>
+</svg>
