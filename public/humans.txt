@@ -1,0 +1,11 @@
+/* TEAM */
+Company: Ionity Global (PTY) Ltd
+Site: https://www.hellion.solutions
+
+/* THANKS */
+VLR Holdings — kasvukapital
+
+/* SITE */
+Last update: 2025-05-18
+Language: English
+Standards: HTML5, CSS3

@@ -13,10 +13,37 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
   <link rel="manifest" href="site.webmanifest"/>
 
+  <link rel="canonical" href="https://www.hellion.solutions/"/>
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
+
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="VLR Holdings"/>
   <meta property="og:description" content="VLR Holdings operates at the intersection of vision and patience — where strategic capital meets timeless business principles."/>
-  <meta property="og:image" content="og-image.jpeg"/>
+  <meta property="og:image" content="https://www.hellion.solutions/og-image.jpeg"/>
+  <meta property="og:url" content="https://www.hellion.solutions/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="VLR Holdings"/>
+  <meta name="twitter:description" content="VLR Holdings operates at the intersection of vision and patience — where strategic capital meets timeless business principles."/>
+  <meta name="twitter:image" content="https://www.hellion.solutions/og-image.jpeg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VLR Holdings",
+    "alternateName": "kasvukapital",
+    "url": "https://www.hellion.solutions/",
+    "logo": "https://www.hellion.solutions/vlr-logo-transparent.png",
+    "description": "VLR Holdings operates at the intersection of vision and patience — where strategic capital meets timeless business principles.",
+    "legalName": "Ionity Global (PTY) Ltd",
+    "foundingDate": "2018",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "general",
+      "email": "ai@ionity.today"
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -402,6 +429,52 @@
     .footer-links { display: flex; gap: 1.5rem; list-style: none; }
     .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.06em; }
     .footer-links a:hover { color: rgba(255,255,255,0.9); }
+
+    /* ─── Cookie Banner ──────────────────────────────────────── */
+    #cookieBanner {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: var(--black);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 680px;
+      width: calc(100% - 3rem);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    #cookieBanner p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      margin: 0;
+      flex: 1;
+    }
+    .cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+    .cookie-btn {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1.1rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .cookie-btn--accept { background: var(--gold); color: #fff; }
+    .cookie-btn--accept:hover { background: #c9a040; }
+    .cookie-btn--decline { background: transparent; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.2); }
+    .cookie-btn--decline:hover { color: rgba(255,255,255,0.85); }
+    @media (max-width: 540px) {
+      #cookieBanner { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -611,14 +684,37 @@
     <img src="vlr-logo-transparent.png" alt="" class="footer-logo" aria-hidden="true"/>
     <span class="footer-wordmark">VLR Holdings</span>
   </div>
-  <span class="footer-copy">© 2025 Ionity Global (PTY) Ltd. All rights reserved.</span>
+  <span class="footer-copy">© 2025 VLR Holdings — Made by Ionity Global (PTY) Ltd. All rights reserved.</span>
   <ul class="footer-links" role="list">
     <li><a href="#">Privacy</a></li>
     <li><a href="#">Terms</a></li>
   </ul>
 </footer>
 
+<!-- ─── Cookie Consent ──────────────────────────────────────── -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" style="display:none">
+  <p>We use cookies to improve your experience. By continuing you agree to our use of cookies.</p>
+  <div class="cookie-actions">
+    <button id="cookieAccept" class="cookie-btn cookie-btn--accept">Accept</button>
+    <button id="cookieDecline" class="cookie-btn cookie-btn--decline">Decline</button>
+  </div>
+</div>
+
 <script>
+  // Cookie consent
+  (function() {
+    var banner = document.getElementById('cookieBanner');
+    if (!localStorage.getItem('cookieConsent')) banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.style.display = 'none';
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
+
   // Mobile nav toggle
   const toggle = document.getElementById('navToggle');
   const links  = document.getElementById('navLinks');
